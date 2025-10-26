@@ -20,3 +20,10 @@ func _on_connected_to_server() -> void:
 
 func _on_connection_failed() -> void:
 	print("Failed to connect to server.")
+
+func try_connect_client_to_lobby() -> void:
+	c_try_connect_client_to_lobby.rpc_id(1)
+
+@rpc("any_peer", "call_remote", "reliable")
+func c_try_connect_client_to_lobby() -> void:
+	pass
